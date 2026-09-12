@@ -1,0 +1,439 @@
+/* ModelViewer3D.css — Estilos de la Maqueta Arquitectónica 3D WebGL */
+
+.model-viewer-section {
+  padding: 6rem 1.5rem 5rem;
+  background-color: #0c141d;
+  color: #f5f3f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.model-viewer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Encabezado */
+.model-viewer-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3rem;
+}
+
+.model-viewer-eyebrow {
+  display: inline-block;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #fedeb2;
+  margin-bottom: 0.75rem;
+  background: rgba(254, 222, 178, 0.1);
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(254, 222, 178, 0.25);
+}
+
+.model-viewer-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+}
+
+.model-viewer-description {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #a2b1bf;
+}
+
+/* Envoltorio del Canvas */
+.model-viewer-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  background: radial-gradient(circle at center, #131f2c 0%, #080d14 100%);
+  border: 1px solid rgba(186, 164, 123, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  touch-action: none;
+}
+
+@media (min-width: 768px) {
+  .model-viewer-canvas-wrapper {
+    height: 640px;
+  }
+}
+
+.model-viewer-canvas {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+.model-viewer-canvas:active {
+  cursor: grabbing;
+}
+
+/* Spinner de carga */
+.model-viewer-loading {
+  position: absolute;
+  inset: 0;
+  background-color: #0c141d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 50;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #fedeb2;
+  letter-spacing: 0.05em;
+}
+
+.model-viewer-spinner {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(254, 222, 178, 0.2);
+  border-top-color: #fedeb2;
+  border-radius: 50%;
+  animation: spin3D 0.8s linear infinite;
+}
+
+@keyframes spin3D {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Barra Superior de Herramientas HUD */
+.model-viewer-hud-top {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.model-viewer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(12, 20, 29, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #fedeb2;
+  pointer-events: auto;
+}
+
+.model-viewer-pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.model-viewer-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: auto;
+}
+
+.hud-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(12, 20, 29, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f5f3f0;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hud-button:hover {
+  background: rgba(254, 222, 178, 0.15);
+  border-color: #fedeb2;
+  color: #fedeb2;
+}
+
+.hud-button-active {
+  background: #725b38;
+  border-color: #fedeb2;
+  color: #ffffff;
+}
+
+.hud-mode-toggle {
+  display: flex;
+  background: rgba(12, 20, 29, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.hud-toggle-opt {
+  background: transparent;
+  border: none;
+  color: #a2b1bf;
+  padding: 0.4rem 0.75rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hud-toggle-opt:hover {
+  color: #ffffff;
+}
+
+.hud-toggle-opt-active {
+  background: rgba(254, 222, 178, 0.2);
+  color: #fedeb2;
+  font-weight: 600;
+}
+
+/* Selector de Niveles / Hotspots en la parte inferior */
+.model-viewer-levels-nav {
+  position: absolute;
+  bottom: 4rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  z-index: 20;
+  scrollbar-width: none;
+}
+
+.model-viewer-levels-nav::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .model-viewer-levels-nav {
+    left: 2rem;
+    right: auto;
+    bottom: 2rem;
+    flex-direction: column;
+  }
+}
+
+.level-nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(12, 20, 29, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #d1dbe5;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.level-nav-pill:hover {
+  border-color: rgba(254, 222, 178, 0.5);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.level-nav-pill-active {
+  background: rgba(114, 91, 56, 0.9);
+  border-color: #fedeb2;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(114, 91, 56, 0.4);
+}
+
+.level-nav-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #baa47b;
+  transition: background-color 0.2s ease;
+}
+
+.level-nav-pill-active .level-nav-indicator {
+  background-color: #fedeb2;
+  box-shadow: 0 0 6px #fedeb2;
+}
+
+/* Tarjeta Flotante de Información Arquitectónica */
+.model-viewer-info-card {
+  position: absolute;
+  top: 4.5rem;
+  right: 1rem;
+  max-width: 290px;
+  background: rgba(12, 20, 29, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(186, 164, 123, 0.35);
+  border-radius: 10px;
+  padding: 1.15rem;
+  z-index: 20;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 640px) {
+  .model-viewer-info-card {
+    display: none; /* En móviles pequeños se preserva el espacio táctil */
+  }
+}
+
+.info-card-header {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-card-elevation {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  color: #baa47b;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+}
+
+.info-card-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 500;
+  margin: 0;
+}
+
+.info-card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.info-card-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.76rem;
+  line-height: 1.4;
+  color: #c4d1de;
+}
+
+.info-card-bullet {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #fedeb2;
+  margin-top: 0.35rem;
+  flex-shrink: 0;
+}
+
+.info-card-dimensions {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  color: #94a7ba;
+  margin-top: 0.2rem;
+}
+
+.info-card-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-card-price {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #fedeb2;
+  white-space: nowrap;
+}
+
+.info-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(254, 222, 178, 0.15);
+  border: 1px solid rgba(254, 222, 178, 0.35);
+  color: #fedeb2;
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.info-card-cta:hover {
+  background: #fedeb2;
+  color: #0c141d;
+  font-weight: 600;
+}
+
+/* Leyenda de Gestos */
+.model-viewer-gesture-tip {
+  position: absolute;
+  bottom: 0.85rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(12, 20, 29, 0.65);
+  backdrop-filter: blur(6px);
+  padding: 0.35rem 0.65rem;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  color: #8da1b3;
+  pointer-events: none;
+  z-index: 20;
+}
+
+@media (max-width: 768px) {
+  .model-viewer-gesture-tip {
+    left: 1rem;
+    right: auto;
+    bottom: 0.65rem;
+  }
+}

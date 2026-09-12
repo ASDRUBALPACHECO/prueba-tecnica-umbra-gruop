@@ -1,0 +1,159 @@
+/* Estilos Semánticos para el Componente Experiencia */
+
+.experiencia-section {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.experiencia-parallax-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -20%;
+  height: 140%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.experiencia-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.1);
+}
+
+.experiencia-tint-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(1px);
+  pointer-events: none;
+}
+
+.experiencia-content-box {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  max-width: 36rem; /* max-w-xl */
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .experiencia-content-box {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.experiencia-play-btn {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  background-color: rgba(251, 249, 246, 0.2);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.experiencia-play-btn:hover {
+  background-color: rgba(251, 249, 246, 0.35);
+  transform: scale(1.1);
+}
+
+.experiencia-play-btn:active {
+  transform: scale(0.95);
+}
+
+.experiencia-play-icon {
+  font-size: 36px;
+  color: #ffffff;
+  margin-left: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.experiencia-play-btn:hover .experiencia-play-icon {
+  color: #fedeb2;
+}
+
+.experiencia-eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #fedeb2;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.experiencia-headline {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.875rem;
+  line-height: 1.2;
+  color: #ffffff;
+  font-weight: 400;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .experiencia-headline {
+    font-size: 3rem;
+  }
+}
+
+.experiencia-description {
+  font-size: 0.875rem;
+  color: #e4e2df;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  line-height: 1.625;
+  font-weight: 300;
+}
+
+@media (min-width: 640px) {
+  .experiencia-description {
+    font-size: 1rem;
+  }
+}
+
+.experiencia-cta-btn {
+  padding: 1rem 2rem;
+  background-color: #0f1c2c;
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.experiencia-cta-btn:hover {
+  background-color: #1b1c1a;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: scale(1.02);
+}
+
+.experiencia-cta-btn:active {
+  transform: scale(0.98);
+}

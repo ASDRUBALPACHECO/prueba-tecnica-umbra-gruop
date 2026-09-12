@@ -1,0 +1,559 @@
+/* Estilos Semánticos para el Componente Header */
+
+/* 1. Barra de Navegación Principal */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background-color: rgba(251, 249, 246, 0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(226, 220, 210, 0.6);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.03);
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.site-header-inner {
+  height: 5rem; /* h-20 */
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  max-width: 80rem; /* max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .site-header-inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* 2. Grupo Izquierdo: Menú Hamburguesa y Logotipo */
+.header-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-menu-button {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  color: #1b1c1a;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.header-menu-button:hover {
+  color: #725b38;
+}
+
+.hamburger-line {
+  width: 1.5rem;
+  height: 2px;
+  background-color: currentColor;
+  transform-origin: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: left;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.header-logo-img {
+  height: 2rem;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.header-logo-link:hover .header-logo-img {
+  transform: scale(1.05);
+}
+
+.header-logo-text {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.25rem;
+  color: #1b1c1a;
+  letter-spacing: -0.025em;
+  margin-left: 0.25rem;
+  font-weight: 500;
+}
+
+@media (min-width: 640px) {
+  .header-logo-text {
+    font-size: 1.5rem;
+  }
+}
+
+/* 3. Acciones del Lado Derecho */
+.header-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-nav-link {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1rem;
+  color: #1b1c1a;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  display: none;
+  transition: color 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .header-nav-link {
+    display: block;
+    font-size: 1.125rem;
+  }
+}
+
+.header-nav-link:hover {
+  color: #725b38;
+}
+
+.header-cta-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f1c2c;
+  color: #ffffff;
+  padding: 0.625rem 1rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+@media (min-width: 480px) {
+  .header-cta-button {
+    display: inline-flex;
+    padding: 0.625rem 1.25rem;
+  }
+}
+
+.header-cta-button:hover {
+  background-color: #1b1c1a;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.header-cta-button:active {
+  transform: scale(0.95);
+}
+
+.header-concierge-trigger {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.header-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(226, 220, 210, 0.3);
+  color: #1b1c1a;
+  padding: 0.45rem 0.8rem;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.header-theme-toggle:hover {
+  background: rgba(114, 91, 56, 0.15);
+  border-color: #725b38;
+  color: #725b38;
+  transform: translateY(-1px);
+}
+
+.header-theme-toggle-active {
+  background: #725b38;
+  border-color: #fedeb2;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(254, 222, 178, 0.3);
+}
+
+@media (max-width: 640px) {
+  .header-theme-label {
+    display: none;
+  }
+  .header-theme-toggle {
+    padding: 0.45rem;
+  }
+}
+
+.header-concierge-trigger:hover {
+  background-color: #725b38;
+  transform: scale(1.05);
+}
+
+/* 4. Menú Desplegable Lateral (Drawer) */
+.header-drawer-container {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.header-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(27, 28, 26, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.header-drawer-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 24rem;
+  height: 100%;
+  background-color: #fbf9f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
+  border-left: 1px solid #e2dcd2;
+  z-index: 10;
+}
+
+@media (min-width: 640px) {
+  .header-drawer-panel {
+    padding: 2rem;
+  }
+}
+
+.header-drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e2dcd2;
+}
+
+.header-drawer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-drawer-close {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1b1c1a;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.header-drawer-close:hover {
+  color: #725b38;
+}
+
+.header-drawer-eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #725b38;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding-top: 1.5rem;
+  padding-bottom: 0.75rem;
+  margin: 0;
+}
+
+.header-drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+.header-drawer-link {
+  text-align: left;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.25rem;
+  color: #1b1c1a;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.header-drawer-link:hover {
+  color: #725b38;
+  transform: translateX(6px);
+}
+
+.header-drawer-footer {
+  padding-top: 2rem;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-top: 1px solid #e2dcd2;
+}
+
+.header-drawer-cta-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f1c2c;
+  color: #ffffff;
+  padding: 0.875rem 1rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-drawer-cta-button:hover {
+  background-color: #1b1c1a;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* 5. Modal de Concierge Privado */
+.header-concierge-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.header-concierge-dialog {
+  background-color: #fbf9f6;
+  max-width: 28rem;
+  width: 100%;
+  padding: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid #e2dcd2;
+}
+
+@media (min-width: 640px) {
+  .header-concierge-dialog {
+    padding: 2rem;
+  }
+}
+
+.header-concierge-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.header-concierge-eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #725b38;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.header-concierge-close-btn {
+  background: transparent;
+  border: none;
+  color: #1b1c1a;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.header-concierge-close-btn:hover {
+  color: #725b38;
+}
+
+.header-concierge-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.5rem;
+  color: #1b1c1a;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.header-concierge-description {
+  font-size: 0.875rem;
+  color: #44474c;
+  margin-bottom: 1.5rem;
+  line-height: 1.625;
+}
+
+.header-concierge-info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background-color: #f5f3f0;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  color: #1b1c1a;
+  border: 1px solid #e2dcd2;
+}
+
+.header-concierge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-concierge-item-border {
+  padding-top: 0.5rem;
+  border-top: 1px solid #e2dcd2;
+}
+
+.header-concierge-item-label {
+  font-size: 10px;
+  color: #725b38;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.header-concierge-cta-btn {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: #0f1c2c;
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.header-concierge-cta-btn:hover {
+  background-color: #1b1c1a;
+}
+
+/* 5. Selector de Idioma Minimalista y Elegante (ES / EN) */
+.header-lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  background-color: #efeeeb;
+  border: 1px solid #e2dcd2;
+  border-radius: 9999px;
+  padding: 0.2rem 0.45rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 0.25s ease;
+}
+
+.header-lang-btn {
+  background: transparent;
+  border: none;
+  color: #74777d;
+  cursor: pointer;
+  padding: 0.2rem 0.45rem;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.header-lang-btn:hover {
+  color: #1b1c1a;
+}
+
+.header-lang-active {
+  background-color: #0f1c2c;
+  color: #ffffff !important;
+}
+
+.header-lang-divider {
+  color: #c4c6cc;
+  font-size: 10px;
+  user-select: none;
+}
+
+body.theme-golden-hour .header-lang-switch {
+  background-color: #162332;
+  border-color: rgba(254, 222, 178, 0.25);
+}
+
+body.theme-golden-hour .header-lang-btn {
+  color: #94a3b8;
+}
+
+body.theme-golden-hour .header-lang-btn:hover {
+  color: #ffffff;
+}
+
+body.theme-golden-hour .header-lang-active {
+  background-color: #fedeb2;
+  color: #0c141d !important;
+}
+
+body.theme-golden-hour .header-lang-divider {
+  color: #475569;
+}
+

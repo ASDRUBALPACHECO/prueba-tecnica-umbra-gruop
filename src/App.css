@@ -1,0 +1,26 @@
+/* Estilos Semánticos para el Layout Principal de la Aplicación */
+
+.app-root-container {
+  background-color: #fbf9f6;
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #1b1c1a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-root-container::selection {
+  background-color: #fedeb2;
+  color: #0f1c2c;
+}
+
+.app-main-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  padding-top: 5rem; /* pt-20 */
+  background-color: #fbf9f6;
+  padding-bottom: 6rem; /* pb-24 */
+}

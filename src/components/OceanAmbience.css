@@ -1,0 +1,90 @@
+/* OceanAmbience.css — Botón y animación de ecualizador de sonido costero */
+
+.ocean-ambience-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(226, 220, 210, 0.25);
+  color: #f5f3f0;
+  padding: 0.45rem 0.85rem;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.ocean-ambience-btn:hover {
+  background: rgba(254, 222, 178, 0.15);
+  border-color: #fedeb2;
+  color: #fedeb2;
+  transform: translateY(-1px);
+}
+
+.ocean-ambience-active {
+  background: rgba(114, 91, 56, 0.4);
+  border-color: #fedeb2;
+  color: #fedeb2;
+  box-shadow: 0 0 14px rgba(254, 222, 178, 0.25);
+}
+
+/* Barras animadas del ecualizador */
+.ocean-sound-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 14px;
+}
+
+.sound-bar {
+  width: 2.5px;
+  background-color: currentColor;
+  border-radius: 1px;
+  height: 4px;
+  transition: height 0.2s ease;
+}
+
+.sound-bar-animated.bar-1 {
+  animation: waveBar1 1.2s ease-in-out infinite alternate;
+}
+
+.sound-bar-animated.bar-2 {
+  animation: waveBar2 0.85s ease-in-out infinite alternate;
+}
+
+.sound-bar-animated.bar-3 {
+  animation: waveBar3 1.05s ease-in-out infinite alternate;
+}
+
+@keyframes waveBar1 {
+  0% { height: 3px; }
+  100% { height: 13px; }
+}
+
+@keyframes waveBar2 {
+  0% { height: 14px; }
+  100% { height: 4px; }
+}
+
+@keyframes waveBar3 {
+  0% { height: 5px; }
+  100% { height: 11px; }
+}
+
+.ocean-ambience-label {
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .ocean-ambience-label {
+    display: none;
+  }
+  .ocean-ambience-btn {
+    padding: 0.45rem;
+  }
+}

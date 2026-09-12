@@ -1,0 +1,101 @@
+[
+  {
+    "id": "inq_1789240256084",
+    "confirmationCode": "OBH-332941",
+    "name": "Carlos Mendoza",
+    "email": "cmendoza@privatrust.com",
+    "phone": "+34 600 123 456",
+    "typology": "estate",
+    "message": "Interesado en la villa de acantilado",
+    "privacyAccepted": true,
+    "receivedAt": "2026-09-12T19:10:56.084Z"
+  },
+  {
+    "id": "inq_1789240382545",
+    "confirmationCode": "OBH-471731",
+    "name": "Lord Harrington",
+    "email": "harrington@mayfair.uk",
+    "phone": "+44 20 7946 0919",
+    "typology": "estate",
+    "message": "Requesting private sea trial",
+    "privacyAccepted": true,
+    "receivedAt": "2026-09-12T19:13:02.545Z"
+  },
+  {
+    "id": "inq_1789240431984",
+    "confirmationCode": "OBH-264334",
+    "name": "Doña Sofia de Borbón",
+    "email": "sofia@inversiones.es",
+    "phone": "+34 600 123 456",
+    "typology": "garden",
+    "message": "Visita para el jardín privado",
+    "privacyAccepted": true,
+    "receivedAt": "2026-09-12T19:13:51.984Z"
+  },
+  {
+    "id": "inq_1789240770511",
+    "confirmationCode": "OBH-575286",
+    "name": "Carlos Mendoza",
+    "email": "cmendoza@privatrust.com",
+    "phone": "+34 600 123 456",
+    "typology": "estate",
+    "message": "Interesado en la villa de acantilado",
+    "privacyAccepted": true,
+    "receivedAt": "2026-09-12T19:19:30.511Z"
+  },
+  {
+    "id": "inq_1789241626058",
+    "confirmationCode": "OBH-334172",
+    "name": "sdasdas",
+    "email": "afsasf@gmail.com",
+    "phone": "asdafgaf",
+    "typology": "garden",
+    "message": "adfgasfgasdg",
+    "privacyAccepted": true,
+    "receivedAt": "2026-09-12T19:33:46.058Z"
+  },
+  {
+    "id": "inq_1789241654417",
+    "confirmationCode": "OBH-859003",
+    "name": "asdasfasf",
+    "email": "asfasfasf@gmail.com",
+    "phone": "asfasfasfasf",
+    "typology": "garden",
+    "message": "",
+    "privacyAccepted": true,
+    "receivedAt": "2026-09-12T19:34:14.417Z"
+  },
+  {
+    "id": "inq_1789241897194",
+    "confirmationCode": "OBH-397797",
+    "name": "Carlos Mendoza",
+    "email": "cmendoza@privatrust.com",
+    "phone": "+34 600 123 456",
+    "typology": "estate",
+    "message": "Interesado en la villa de acantilado",
+    "privacyAccepted": true,
+    "receivedAt": "2026-09-12T19:38:17.194Z"
+  },
+  {
+    "id": "inq_1789241983991",
+    "confirmationCode": "OBH-534357",
+    "name": "Prueba Telefono Valido",
+    "email": "valido@phone.com",
+    "phone": "+34 654 321 098",
+    "typology": "ocean",
+    "message": "",
+    "privacyAccepted": true,
+    "receivedAt": "2026-09-12T19:39:43.991Z"
+  },
+  {
+    "id": "inq_1789242094802",
+    "confirmationCode": "OBH-389799",
+    "name": "asdasfas",
+    "email": "adafhjna@gmail.com",
+    "phone": "123456789",
+    "typology": "garden",
+    "message": "asdasfasfa",
+    "privacyAccepted": true,
+    "receivedAt": "2026-09-12T19:41:34.802Z"
+  }
+]

@@ -1,0 +1,283 @@
+/* Estilos Semánticos para el Componente Ubicación */
+
+.ubicacion-section {
+  width: 100%;
+  padding: 4rem 1.25rem;
+  max-width: 72rem; /* max-w-6xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .ubicacion-section {
+    padding: 6rem 2rem;
+  }
+}
+
+.ubicacion-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .ubicacion-header {
+    margin-bottom: 3rem;
+  }
+}
+
+.ubicacion-eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #725b38;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.ubicacion-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.5rem;
+  color: #1b1c1a;
+  font-weight: 400;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .ubicacion-title {
+    font-size: 2.25rem;
+  }
+}
+
+.ubicacion-description {
+  font-size: 0.875rem;
+  color: #44474c;
+  margin-top: 0.5rem;
+  max-width: 42rem;
+  line-height: 1.625;
+}
+
+@media (min-width: 640px) {
+  .ubicacion-description {
+    font-size: 1rem;
+  }
+}
+
+/* Lienzo Interactivo del Mapa */
+.ubicacion-map-canvas {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background-color: #efeeeb;
+  overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2dcd2;
+  user-select: none;
+}
+
+@media (min-width: 640px) {
+  .ubicacion-map-canvas {
+    height: 460px;
+  }
+}
+
+.ubicacion-map-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Pines de Radar en el Mapa */
+.map-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.map-pin-pulse {
+  position: absolute;
+  display: inline-flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 9999px;
+  background-color: #725b38;
+  opacity: 0.75;
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.map-pin-circle {
+  position: relative;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.map-pin-circle-ohana {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #0f1c2c;
+  color: #ffffff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.map-pin-circle-ohana-active {
+  background-color: #0f1c2c;
+  color: #fedeb2;
+  transform: scale(1.1);
+  outline: 2px solid #725b38;
+}
+
+.map-pin-circle-secondary {
+  width: 2rem;
+  height: 2rem;
+  background-color: #fbf9f6;
+  color: #725b38;
+  border: 1px solid rgba(116, 119, 125, 0.4);
+}
+
+.map-pin-circle-secondary-active {
+  background-color: #725b38;
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #0f1c2c;
+}
+
+.map-pin-tag {
+  margin-top: 0.25rem;
+  background-color: rgba(251, 249, 246, 0.95);
+  padding: 0.25rem 0.625rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  text-align: center;
+  border: 1px solid #e2dcd2;
+}
+
+.map-pin-tag-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #1b1c1a;
+  display: block;
+}
+
+.map-pin-tag-subtitle {
+  font-size: 10px;
+  color: #725b38;
+  font-weight: 500;
+  display: block;
+}
+
+/* Tarjeta Popover Dinámica */
+.map-popover-card {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background-color: #fbf9f6;
+  padding: 1.25rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2dcd2;
+  transition: all 0.3s ease;
+  z-index: 30;
+}
+
+@media (min-width: 640px) {
+  .map-popover-card {
+    left: auto;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 20rem;
+  }
+}
+
+.map-popover-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.map-popover-badge {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10px;
+  color: #725b38;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.map-popover-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.125rem;
+  color: #1b1c1a;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.map-popover-description {
+  font-size: 0.75rem;
+  color: #44474c;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.map-popover-footer {
+  padding-top: 0.5rem;
+  border-top: 1px solid #e2dcd2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #725b38;
+}
+
+/* Barra de Botones Selector de Pines */
+.map-selector-bar {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 20;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.map-selector-pill {
+  padding: 0.25rem 0.75rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  background-color: rgba(251, 249, 246, 0.9);
+  color: #44474c;
+  border: 1px solid #e2dcd2;
+  transition: all 0.2s ease;
+}
+
+.map-selector-pill:hover {
+  background-color: #fbf9f6;
+  color: #1b1c1a;
+}
+
+.map-selector-pill-active {
+  background-color: #0f1c2c;
+  color: #ffffff;
+  border-color: #0f1c2c;
+}
+
+.map-selector-pill-active:hover {
+  background-color: #0f1c2c;
+  color: #ffffff;
+}

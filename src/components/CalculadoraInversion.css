@@ -1,0 +1,610 @@
+/* =========================================================================
+   CalculadoraInversion.css — Estética Editorial y Arquitectónica de Ultra-Lujo
+   REGLA ESTRICTA: Cero gradientes (linear-gradient o radial-gradient prohibidos).
+   ========================================================================= */
+
+.calc-luxury-wrapper {
+  margin-top: 4rem;
+  padding: 3rem 1.5rem;
+  background-color: #fbf9f6;
+  border: 1px solid #e2dcd2;
+  border-radius: 4px;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+@media (min-width: 768px) {
+  .calc-luxury-wrapper {
+    padding: 4rem 3rem;
+  }
+}
+
+/* Encabezado Editorial */
+.calc-luxury-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+}
+
+.calc-luxury-eyebrow {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #725b38;
+  margin-bottom: 0.5rem;
+}
+
+.calc-luxury-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+  font-weight: 400;
+  color: #1b1c1a;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.calc-luxury-subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #5d636b;
+}
+
+/* Selector de Residencias estilo Arquitectónico */
+.calc-selector-container {
+  margin-bottom: 3rem;
+}
+
+.calc-selector-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .calc-selector-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .calc-selector-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.calc-residence-card {
+  background-color: #ffffff;
+  border: 1px solid #e2dcd2;
+  border-radius: 2px;
+  padding: 1.25rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.calc-residence-card:hover {
+  border-color: #725b38;
+  background-color: #f5f3f0;
+}
+
+.calc-residence-active {
+  background-color: #0f1c2c !important;
+  border-color: #0f1c2c !important;
+  color: #ffffff !important;
+}
+
+.calc-residence-badge {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #725b38;
+  font-weight: 600;
+}
+
+.calc-residence-active .calc-residence-badge {
+  color: #fedeb2;
+}
+
+.calc-residence-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin: 0;
+  color: inherit;
+}
+
+.calc-residence-price {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1b1c1a;
+  margin-top: 0.25rem;
+}
+
+.calc-residence-active .calc-residence-price {
+  color: #ffffff;
+}
+
+/* Rejilla de Controles y Ledger */
+.calc-main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+@media (min-width: 1024px) {
+  .calc-main-grid {
+    grid-template-columns: 1.15fr 1fr;
+    gap: 3.5rem;
+  }
+}
+
+/* Columna de Sliders */
+.calc-controls-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.calc-input-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.calc-input-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.calc-input-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1b1c1a;
+}
+
+.calc-input-value-chip {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #725b38;
+  background-color: #efeeeb;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid #e2dcd2;
+  border-radius: 2px;
+}
+
+/* Sliders Sobrios (Sin gradientes) */
+.calc-range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background-color: #d8d3c9;
+  outline: none;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.calc-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: #725b38;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.calc-range-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background-color: #725b38;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.calc-range-slider::-webkit-slider-thumb:hover {
+  background-color: #0f1c2c;
+  transform: scale(1.15);
+}
+
+.calc-range-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 10px;
+  color: #74777d;
+  letter-spacing: 0.02em;
+}
+
+/* Columna del Ledger Financiero */
+.calc-ledger-col {
+  height: 100%;
+}
+
+.calc-ledger-card {
+  background-color: #ffffff;
+  border: 1px solid #e2dcd2;
+  border-radius: 4px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.calc-ledger-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e2dcd2;
+  margin-bottom: 1.75rem;
+  gap: 1rem;
+}
+
+.calc-ledger-sub {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #725b38;
+  margin-bottom: 0.25rem;
+}
+
+.calc-ledger-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1b1c1a;
+  margin: 0;
+}
+
+.calc-ledger-price-block {
+  text-align: right;
+}
+
+.calc-ledger-price {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #0f1c2c;
+  display: block;
+}
+
+/* Secciones y Tablas del Ledger */
+.calc-ledger-section {
+  margin-bottom: 1.75rem;
+}
+
+.calc-ledger-section-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1b1c1a;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(226, 220, 210, 0.4);
+}
+
+.calc-ledger-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.calc-ledger-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.65rem;
+  background-color: #fbf9f6;
+  border: 1px solid #eeebe6;
+  border-radius: 2px;
+}
+
+.calc-row-highlight {
+  background-color: #f5f3f0;
+  border-color: #dfd8cb;
+}
+
+.calc-row-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  color: #1b1c1a;
+  font-weight: 500;
+}
+
+.calc-row-note {
+  display: block;
+  font-size: 10px;
+  color: #74777d;
+  margin-top: 0.1rem;
+}
+
+.calc-row-value {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #1b1c1a;
+  white-space: nowrap;
+}
+
+.calc-row-accent {
+  color: #725b38;
+}
+
+/* Retornos Estimados */
+.calc-returns-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 480px) {
+  .calc-returns-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.calc-return-box {
+  background-color: #fbf9f6;
+  border: 1px solid #e2dcd2;
+  border-radius: 2px;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.calc-return-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #725b38;
+  font-weight: 600;
+}
+
+.calc-return-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.calc-gain-color {
+  color: #2b7a4b;
+}
+
+.calc-yield-color {
+  color: #725b38;
+}
+
+.calc-return-caption {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 10px;
+  color: #74777d;
+}
+
+/* Botón CTA Formal Sólido (Sin gradientes) */
+.calc-formal-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  background-color: #0f1c2c;
+  color: #ffffff;
+  padding: 0.95rem 1.25rem;
+  border: none;
+  border-radius: 2px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 1rem;
+}
+
+.calc-formal-cta:hover {
+  background-color: #725b38;
+}
+
+.calc-formal-cta:active {
+  transform: scale(0.98);
+}
+
+.calc-ledger-disclaimer {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 10px;
+  line-height: 1.45;
+  color: #8c939e;
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+/* =========================================================================
+   Soporte para MODO OSCURO (theme-golden-hour) en la Calculadora
+   ========================================================================= */
+body.theme-golden-hour .calc-luxury-wrapper {
+  background-color: #111a24;
+  border-color: rgba(254, 222, 178, 0.2);
+}
+
+body.theme-golden-hour .calc-luxury-eyebrow {
+  color: #fedeb2;
+}
+
+body.theme-golden-hour .calc-luxury-title {
+  color: #ffffff;
+}
+
+body.theme-golden-hour .calc-luxury-subtitle {
+  color: #94a3b8;
+}
+
+body.theme-golden-hour .calc-residence-card {
+  background-color: #162332;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #f5f3f0;
+}
+
+body.theme-golden-hour .calc-residence-card:hover {
+  border-color: #fedeb2;
+  background-color: #1c2c3e;
+}
+
+body.theme-golden-hour .calc-residence-active {
+  background-color: #725b38 !important;
+  border-color: #fedeb2 !important;
+  color: #ffffff !important;
+}
+
+body.theme-golden-hour .calc-residence-badge {
+  color: #baa47b;
+}
+
+body.theme-golden-hour .calc-residence-active .calc-residence-badge {
+  color: #fedeb2;
+}
+
+body.theme-golden-hour .calc-residence-price {
+  color: #f5f3f0;
+}
+
+body.theme-golden-hour .calc-input-label {
+  color: #f5f3f0;
+}
+
+body.theme-golden-hour .calc-input-value-chip {
+  background-color: #162332;
+  border-color: rgba(254, 222, 178, 0.25);
+  color: #fedeb2;
+}
+
+body.theme-golden-hour .calc-range-slider {
+  background-color: #243649;
+}
+
+body.theme-golden-hour .calc-range-slider::-webkit-slider-thumb {
+  background-color: #fedeb2;
+  border-color: #111a24;
+}
+
+body.theme-golden-hour .calc-range-slider::-moz-range-thumb {
+  background-color: #fedeb2;
+  border-color: #111a24;
+}
+
+body.theme-golden-hour .calc-range-ticks {
+  color: #64748b;
+}
+
+body.theme-golden-hour .calc-ledger-card {
+  background-color: #0c141d;
+  border-color: rgba(254, 222, 178, 0.2);
+}
+
+body.theme-golden-hour .calc-ledger-header {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body.theme-golden-hour .calc-ledger-sub {
+  color: #fedeb2;
+}
+
+body.theme-golden-hour .calc-ledger-name {
+  color: #ffffff;
+}
+
+body.theme-golden-hour .calc-ledger-price {
+  color: #fedeb2;
+}
+
+body.theme-golden-hour .calc-ledger-section-title {
+  color: #f5f3f0;
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body.theme-golden-hour .calc-ledger-row {
+  background-color: #111a24;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.theme-golden-hour .calc-row-highlight {
+  background-color: #162332;
+  border-color: rgba(254, 222, 178, 0.25);
+}
+
+body.theme-golden-hour .calc-row-title {
+  color: #f5f3f0;
+}
+
+body.theme-golden-hour .calc-row-note {
+  color: #94a3b8;
+}
+
+body.theme-golden-hour .calc-row-value {
+  color: #ffffff;
+}
+
+body.theme-golden-hour .calc-row-accent {
+  color: #fedeb2;
+}
+
+body.theme-golden-hour .calc-return-box {
+  background-color: #111a24;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.theme-golden-hour .calc-return-tag {
+  color: #fedeb2;
+}
+
+body.theme-golden-hour .calc-gain-color {
+  color: #4ade80;
+}
+
+body.theme-golden-hour .calc-yield-color {
+  color: #fedeb2;
+}
+
+body.theme-golden-hour .calc-return-caption {
+  color: #94a3b8;
+}
+
+body.theme-golden-hour .calc-formal-cta {
+  background-color: #fedeb2;
+  color: #0c141d;
+}
+
+body.theme-golden-hour .calc-formal-cta:hover {
+  background-color: #ffffff;
+  color: #0c141d;
+}
+
+body.theme-golden-hour .calc-ledger-disclaimer {
+  color: #64748b;
+}

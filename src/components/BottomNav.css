@@ -1,0 +1,66 @@
+/* Estilos Semánticos para el Dock de Navegación Inferior */
+
+.bottom-dock-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background-color: rgba(251, 249, 246, 0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(226, 220, 210, 0.8);
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.03);
+}
+
+.bottom-dock-inner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 5rem; /* h-20 */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 32rem; /* max-w-lg */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bottom-dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  width: 4rem;
+  height: 4rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #44474c;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.bottom-dock-item:hover {
+  color: #1b1c1a;
+  transform: translateY(-1px);
+}
+
+.bottom-dock-item-active {
+  color: #725b38;
+}
+
+.bottom-dock-item-active:hover {
+  color: #725b38;
+}
+
+.bottom-dock-icon {
+  font-size: 20px;
+}
+
+.bottom-dock-label {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

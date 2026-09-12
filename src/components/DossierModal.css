@@ -1,0 +1,417 @@
+/* Estilos Semánticos para el Modal Dossier */
+
+.dossier-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+@media (min-width: 640px) {
+  .dossier-modal-overlay {
+    padding: 1.5rem;
+  }
+}
+
+.dossier-modal-container {
+  background-color: #fbf9f6;
+  max-width: 48rem; /* max-w-3xl */
+  width: 100%;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid #e2dcd2;
+  overflow: hidden;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+  overscroll-behavior: contain;
+}
+
+/* Encabezado Visual del Dossier */
+.dossier-hero-cover {
+  position: relative;
+  height: 15rem; /* h-60 */
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .dossier-hero-cover {
+    height: 18rem; /* h-72 */
+  }
+}
+
+.dossier-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dossier-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+}
+
+.dossier-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.dossier-close-button:hover {
+  background-color: #000000;
+}
+
+.dossier-badge-wrapper {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+}
+
+.dossier-badge {
+  background-color: #fedeb2;
+  color: #78603e;
+  padding: 0.25rem 0.75rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dossier-hero-caption {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .dossier-hero-caption {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.dossier-hero-category {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  color: #fedeb2;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.dossier-hero-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 400;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .dossier-hero-title {
+    font-size: 1.875rem;
+  }
+}
+
+.dossier-hero-price-label {
+  font-size: 0.75rem;
+  color: #e4e2df;
+  display: block;
+}
+
+.dossier-hero-price-val {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.25rem;
+  color: #fedeb2;
+  font-weight: 600;
+}
+
+@media (min-width: 640px) {
+  .dossier-hero-price-val {
+    font-size: 1.5rem;
+  }
+}
+
+/* Pestañas de Navegación del Dossier */
+.dossier-tabs-nav {
+  display: flex;
+  border-bottom: 1px solid #e2dcd2;
+  background-color: #f5f3f0;
+}
+
+.dossier-tab-btn {
+  flex: 1;
+  padding: 0.75rem 0;
+  text-align: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #44474c;
+  transition: all 0.2s ease;
+}
+
+.dossier-tab-btn:hover {
+  color: #1b1c1a;
+}
+
+.dossier-tab-btn-active {
+  border-bottom-color: #725b38;
+  color: #1b1c1a;
+  background-color: #fbf9f6;
+}
+
+/* Contenedor del Cuerpo de la Pestaña */
+.dossier-tab-content {
+  padding: 1.5rem;
+  max-height: 50vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+@media (min-width: 640px) {
+  .dossier-tab-content {
+    padding: 2rem;
+  }
+}
+
+.dossier-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  background-color: #f5f3f0;
+  padding: 1rem;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .dossier-specs-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.dossier-spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.dossier-spec-item-label {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #725b38;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: block;
+}
+
+.dossier-spec-item-val {
+  font-weight: 500;
+  color: #1b1c1a;
+  font-size: 0.875rem;
+}
+
+.dossier-highlights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dossier-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: 0.75rem;
+  color: #1b1c1a;
+}
+
+.dossier-highlight-icon {
+  color: #725b38;
+  font-size: 16px;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+/* Distribución y Plano */
+.dossier-blueprint-canvas {
+  background-color: #0f1c2c;
+  padding: 1.5rem;
+  color: #d6e4f9;
+  font-family: monospace;
+  font-size: 11px;
+  border: 1px solid #3a4859;
+}
+
+.dossier-blueprint-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #3a4859;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.dossier-blueprint-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.dossier-blueprint-room {
+  border: 1px dashed #778598;
+  padding: 1rem;
+  background-color: #1b2c40;
+}
+
+.dossier-blueprint-footer {
+  border: 2px double rgba(254, 222, 178, 0.6);
+  padding: 0.75rem;
+  background-color: rgba(13, 31, 28, 0.5);
+  text-align: center;
+}
+
+/* Memoria de Calidades */
+.dossier-finishes-card {
+  padding: 1rem;
+  background-color: #f5f3f0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: #1b1c1a;
+}
+
+.dossier-finish-item {
+  padding-top: 0.5rem;
+  border-top: 1px solid #e2dcd2;
+}
+
+.dossier-finish-item:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.dossier-finish-label {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10px;
+  color: #725b38;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: block;
+}
+
+.dossier-finish-desc {
+  color: #44474c;
+  margin-top: 0.125rem;
+  margin-bottom: 0;
+}
+
+/* Barra de Acciones del Pie del Modal */
+.dossier-modal-actions {
+  padding: 1.25rem 1.5rem;
+  background-color: #efeeeb;
+  border-top: 1px solid #e2dcd2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .dossier-modal-actions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.dossier-download-btn {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #0f1c2c;
+  color: #0f1c2c;
+  background: transparent;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .dossier-download-btn {
+    width: auto;
+  }
+}
+
+.dossier-download-btn:hover {
+  background-color: #0f1c2c;
+  color: #ffffff;
+}
+
+.dossier-schedule-btn {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: #0f1c2c;
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .dossier-schedule-btn {
+    width: auto;
+  }
+}
+
+.dossier-schedule-btn:hover {
+  background-color: #1b1c1a;
+}
